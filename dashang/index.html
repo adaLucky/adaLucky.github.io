@@ -1,0 +1,213 @@
+
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>打赏列表 | ada</title>
+    <meta name="keywords" content="阿达,Web安全,测试">
+    <meta name="description" content="阿达的打赏列表">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="icon" type="image/png" href="https://image.3001.net/images/20191031/15724874583730.png">
+    <link href="https://html.sqlsec.com/animate.min.css" rel="stylesheet">
+    <link href="https://html.sqlsec.com/bootstrap.sketchy.min.css" rel="stylesheet">
+    <link href="https://html.sqlsec.com/reward.css" rel="stylesheet">
+    <link href="https://html.sqlsec.com/all.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="https://www.sqlsec.com">
+            <img height="30px" alt="logo" src="https://image.3001.net/images/20191031/15724874583730.png">
+            阿达
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="navbar-collapse collapse justify-content-end" id="navbarColor03">
+            <ul class="nav navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://www.adalucky.com">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-aliplay" href="https://adalucky.com/dashang/">打赏列表</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-money" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">分类</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item text-weixin" href="https://adalucky.com/categories/Performance/">性能测试</a>
+                        <a class="dropdown-item text-money" href="https://adalucky.com/categories/Security/">WEB安全</a>
+                        <a class="dropdown-item text-aliplay" href="https://adalucky.com/categories/Other/">other</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://adalucky.com/friends/">友情链接</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://adalucky.com/about/">关于</a>
+                </li>
+          </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-xs-12 col-sm-12 animated bounceInLeft">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title" style="color: #f61818 !important">
+                        <span class="label pull-right" style="background-color: #f61818; color: #FFF"><i class="fas fa-yen-sign" style="zoom: 2;"></i></span>
+                        <h5>开销总额</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins" style="color: #f61818 !important">
+                            ￥ 3621.65
+                        </h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-xs-12 col-sm-6 animated bounceInLeft">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title text-money">
+                        <span class="label label-money pull-right"><i class="fas fa-yen-sign" style="zoom: 2;"></i></span>
+                        <h5>打赏总额</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins text-money">
+                            ￥ 4287.99
+                        </h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-xs-12 col-sm-6 animated bounceInRight">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title text-aliplay">
+                        <span class="label label-aliplay pull-right"><i class="fab fa-alipay" style="zoom: 2;"></i></span>
+                        <h5>支付宝打赏</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins text-aliplay">
+                            ￥ 843.69
+                        </h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-xs-12 col-sm-6 animated bounceInRight">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title text-weixin">
+                        <span class="label label-weixin pull-right"><i class="fab fa-weixin" style="zoom: 2;"></i></span>
+                        <h5>微信打赏</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins text-weixin">
+                            ￥ 3444.30
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron">
+          <h1 class="display-3">Thanks!</h1>
+          <p class="lead">非常感激每一位打赏的朋友！金额大小无关情义，无论如何都非常感谢你们的支持，在这里会显示所有通过打赏方式支持我的人，打赏列表两天之内必会更新，谢谢各位的鼓励，大家一起努力进步。</p>
+        </div>
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#list">打赏列表</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#order">开销记录</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#dashang">打赏方式</a>
+            </li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active show" id="list">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">打赏人 ID</th>
+                            <th scope="col">Channel</th>
+                            <th scope="col">Money</th>
+                            <th scope="col">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">新</th>
+                            <td class="text-weixin">微信</td>
+                            <td>￥2.00</td>
+                            <td>2021-08-04 15:43</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">❤️朋友❤️</th>
+                            <td class="text-weixin">微信</td>
+                            <td>￥4.00</td>
+                            <td>2021-06-13 18:18</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">😙</th>
+                            <td class="text-weixin">微信</td>
+                            <td>￥9.90</td>
+                            <td>2021-06-01 21:57</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="order">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">用途</th>
+                            <th scope="col">时间</th>
+                            <th scope="col">价格</th>
+                            <th scope="col">详情</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">七牛云 月账单</th>
+                            <td>2021-07-06</td>
+                            <td class="text-money">￥6.61</td>
+                            <td><a href="https://image.3001.net/images/20210712/16260561267919.png">订单截图</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">阿里云ECS服务器 2 年</th>
+                            <td>2020-07-01</td>
+                            <td class="text-danger">￥1864.80</td>
+                            <td><a href="https://image.3001.net/images/20200704/15938365593964.png">订单截图</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">域名续费 1 年</th>
+                            <td>2016-04-23</td>
+                            <td class="text-danger">￥45.00</td>
+                            <td><a href="https://image.3001.net/images/20200704/15938469212710.png">订单截图</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="dashang">
+                <center>
+                    微信
+                    <img src="https://image.3001.net/images/6857.jpg" alt="微信" width="300"/>
+                    <img src="https://image.3001.net/images/74503376388.jpg" alt="支付宝" width="300"/>
+                    支付宝
+                </center>
+                <div class="jumbotron">
+                    <p class="lead">或者点击下方的广告也可以表示心意，广告商说 0.3 元一个 IP 点击~，虽然有点少，但是数量多的话，也还算不错的啦
+                    </p>
+                    <a href="https://ke.qq.com" target="_blank">
+                        <center>自从点了 👇 广告，腰也不酸了，腿也不疼了</center>
+                        <img src="https://adalucky.com" alt="" class="img-shadow img-margin" width="100%">
+                        <center>点一下 👆 玩一年 装备不花一分钱！</center>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="https://html.sqlsec.com/jquery-2.2.0.min.js"></script>
+    <script src="https://html.sqlsec.com/bootstrap.min.js"></script>
+</body>
+</html>

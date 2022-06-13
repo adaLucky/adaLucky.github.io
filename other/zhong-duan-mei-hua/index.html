@@ -1,0 +1,2322 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="美化终端界面 Tmux + iTerm2 + NeoVim + zsh">
+    <meta name="description" content="性能测试 | 自动化测试 | web安全测试">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google-site-verification" content="pBWoGvVEP36FzzS4xIpoMejc5UKi3RKcxd9rWWcjiDg" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Tmux | Ada</title>
+
+    <link rel="icon" type="image/png" href="/medias/16229390604952.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?aaa6c944b0ed07922901d7fc571a171d";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Ada" type="application/atom+xml">
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20210101002438.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/16229390604952.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Ada</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/census">
+          
+          <i class="fas fa-layer-group" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>统计</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-paper-plane" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>时轴</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tag" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-heartbeat" style="zoom: 0.6;"></i>
+      
+      <span>清单</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/List/music">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>音乐</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/List/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>相册</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/List/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>视频</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tools" class="waves-effect waves-light">
+      
+      <i class="fas fa-suitcase" style="zoom: 0.6;"></i>
+      
+      <span>百宝箱</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-link" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/about">
+          
+          <i class="fas fa-user-circle" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>我的</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/contact">
+          
+          <i class="fas fa-envelope" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>留言</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about/journal">
+          
+          <i class="fa fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>日志</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/dashang">
+          
+          <i class="fas fa-hand-holding-usd" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>赞助</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/16229390604952.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Ada</div>
+        <div class="logo-desc">
+            
+            性能测试 | 自动化测试 | web安全测试
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-archive"></i>
+			
+			归档
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/census " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-layer-group" style="position: absolute;left:50px" ></i>
+			      
+		          <span>统计</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-paper-plane" style="position: absolute;left:50px" ></i>
+			      
+		          <span>时轴</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-tag" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-heartbeat"></i>
+			
+			清单
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/List/music " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>音乐</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/List/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>相册</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/List/movies " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>视频</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tools" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-suitcase"></i>
+			
+			百宝箱
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-link"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/about " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-user-circle" style="position: absolute;left:50px" ></i>
+			      
+		          <span>我的</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/contact " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-envelope" style="position: absolute;left:50px" ></i>
+			      
+		          <span>留言</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/about/journal " style="margin-left:75px">
+				  
+				   <i class="fa fa fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>日志</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/dashang " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-hand-holding-usd" style="position: absolute;left:50px" ></i>
+			      
+		          <span>赞助</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/adaLucky/adaLucky.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/adaLucky/adaLucky.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/article/other/tmux.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Tmux</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        background-color: white;
+        width: 345px;
+        padding-left: 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+    
+    #toc-content {
+        height: calc(100vh - 300px);
+        overflow: scroll;
+
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+        bottom: 170px;<!--  -->
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Tmux/">
+                                <span class="chip bg-color">Tmux</span>
+                            </a>
+                        
+                            <a href="/tags/NeoVim/">
+                                <span class="chip bg-color">NeoVim</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Other/" class="post-category">
+                                Other
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-08-31
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-06-13
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    12 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>前几天在B站看到一个视频，感觉UP主的终端特别好看，尤其是分屏对工作效率的提升，本篇文章介绍一下在 Mac 下搭建终端环境 Tmux + iTerm2 + NeoVim + zsh 美化你的终端界面，提升效率</p>
+<a id="more"></a>
+
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="http://louiszhai.github.io/2017/09/30/tmux/" target="_blank" class="LinkCard" style="text-decoration: none;">Tmux使用手册</a></p>
+<h1 id="zsh-oh-my-zsh"><a href="#zsh-oh-my-zsh" class="headerlink" title="zsh+oh my zsh"></a>zsh+oh my zsh</h1><p>安装zsh和 oh my zsh  </p>
+<p><a href="https://blog.csdn.net/ljl6158999/article/details/118144440" target="_blank" class="LinkCard" style="text-decoration: none;">Mac Big Sur升级后brew安装报错问题解决</a></p>
+<p><a href="https://blog.csdn.net/qq_43531694/article/details/106862753" target="_blank" class="LinkCard" style="text-decoration: none;">curl&nbsp;443报错问题（亲测方案一有效）</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装 zsh、查看版本、 设置为默认</span>
+brew <span class="token function">install</span> <span class="token function">zsh</span>
+<span class="token function">zsh</span> --version
+chsh -s /bin/zsh
+<span class="token comment">#安装 oh my zsh</span>
+<span class="token function">sh</span> -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a>iTerm2</h1><h2 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h2><ul>
+<li>主题下载地址：<a target="_blank" rel="noopener" href="https://draculatheme.com/iterm">https://draculatheme.com/iterm</a></li>
+<li>下载主题的zip包后解压到任意目录后，打开 <code>iTerm2</code> –&gt; <code>Preferences</code> –&gt; <code>Profiles</code> –&gt; <code>Clolors</code></li>
+<li>找到 Color Presets 下来框，点击 import 导入 <code>Dracula.itermcolors</code>  然后重新选择 Dracula</li>
+</ul>
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210905112705614-20210905113506039.png" alt="iTerm2 设置Dracula主题"></p>
+<h2 id="设置字体"><a href="#设置字体" class="headerlink" title="设置字体"></a>设置字体</h2><p>Iterm2 里配置非 acsii 字体，否则对于 powerlevel10k 主题的特殊字体会显示不出来。</p>
+<p>(Iterm2 -&gt; Preferences -&gt; Profiles -&gt; Text -&gt; Non-Ascii-Font 选择 nerd-font and restart Iterm2), 之后重启 Iterm2 生效</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts</span>
+brew tap homebrew/cask-fonts
+brew cask <span class="token function">install</span> font-hack-nerd-font<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="安装-zplug-插件管理器"><a href="#安装-zplug-插件管理器" class="headerlink" title="安装 zplug 插件管理器"></a>安装 zplug 插件管理器</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># https://github.com/zplug/zplug</span>
+<span class="token function">curl</span> -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh <span class="token operator">|</span> <span class="token function">zsh</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="安装命令行工具"><a href="#安装命令行工具" class="headerlink" title="安装命令行工具"></a>安装命令行工具</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> fzf
+<span class="token comment"># To install useful key bindings and fuzzy completion:</span>
+<span class="token variable"><span class="token variable">$(</span>brew --prefix<span class="token variable">)</span></span>/opt/fzf/install
+
+brew <span class="token function">install</span> thefuck
+brew <span class="token function">install</span> autojump<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h1 id="Tmux"><a href="#Tmux" class="headerlink" title="Tmux"></a>Tmux</h1><p><img src="http://blog.adalucky.com/notes/ada/image-20210831230907002.png" alt="Tmux+Neovim"></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>tmux是一款优秀的终端复用软件，它比Screen更加强大，至于如何强大，网上有大量的文章讨论了这点，本文不再重复。tmux之所以受人们喜爱，主要得益于以下三</p>
+<ul>
+<li>  丝滑分屏（split），虽然iTem2也提供了横向和竖向分屏功能，但这种分屏功能非常拙劣，完全等同于屏幕新开一个窗口，新开的pane不会自动进入到当前目录，也没有记住当前登录状态。这意味着如果我ssh进入到远程服务器时，iTem2新开的pane中，我依然要重新走一遍ssh登录的老路（omg）。tmux就不会这样，tmux窗口中，新开的pane，默认进入到之前的路径，如果是ssh连接，登录状态也依旧保持着，如此一来，我就可以随意的增删pane，这种灵活性，好处不言而喻。</li>
+<li>  保护现场（attach），即使命令行的工作只进行到一半，关闭终端后还可以重新进入到操作现场，继续工作。对于ssh远程连接而言，即使网络不稳定也没有关系，掉线后重新连接，可以直奔现场，之前运行中的任务，依旧在跑，就好像从来没有离开过一样；特别是在远程服务器上运行耗时的任务，tmux可以帮你一直保持住会话。如此一来，你就可以随时随地放心地进行移动办公，只要你附近的计算机装有tmux（没有你也可以花几分钟装一个），你就能继续刚才的工作。</li>
+<li>  会话共享（适用于结对编程或远程教学），将 tmux 会话的地址分享给他人，这样他们就可以通过 SSH 接入该会话。如果你要给同事演示远程服务器的操作，他不必直勾勾地盯着你的屏幕，借助tmux，他完全可以进入到你的会话，然后静静地看着他桌面上你风骚的键盘走位，只要他愿意，甚至还可以录个屏。</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装成功后再终端输入 tmux 即可进入 tmux 服务</p>
+<hr>
+<blockquote>
+<p>  Mac 下的安装</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 先安装Homebrew，有则跳过</span>
+ruby -e <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="token variable">)</span></span>"</span>
+<span class="token comment"># 安装tmux</span>
+brew <span class="token function">install</span> tmux<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<hr>
+<blockquote>
+<p>在Linux中安装</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> tmux<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<hr>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>开始之前，我们先了解下基本概念：</p>
+<p>tmux采用C/S模型构建，输入tmux命令就相当于开启了一个服务器，此时默认将新建一个会话，然后会话中默认新建一个窗口，窗口中默认新建一个面板。会话、窗口、面板之间的联系如下：</p>
+<p>一个tmux <code>session</code>（会话）可以包含多个<code>window</code>（窗口），窗口默认充满会话界面，因此这些窗口中可以运行相关性不大的任务。</p>
+<p>一个<code>window</code>又可以包含多个<code>pane</code>（面板），窗口下的面板，都处于同一界面下，这些面板适合运行相关性高的任务，以便同时观察到它们的运行情况。</p>
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210829154439587.png" alt="布局介绍"></p>
+<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><h3 id="新建会话"><a href="#新建会话" class="headerlink" title="新建会话"></a>新建会话</h3><p>新建一个tmux session非常简单，语法为<code>tmux new -s session-name</code>，也可以简写为<code>tmux</code>，为了方便管理，建议指定会话名称，如下。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tmux <span class="token comment"># 新建一个无名称的会话</span>
+tmux new -s demo <span class="token comment"># 新建一个名称为demo的会话</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="断开会话"><a href="#断开会话" class="headerlink" title="断开会话"></a>断开会话</h3><p>会话中操作了一段时间，我希望断开会话同时下次还能接着用，怎么做？此时可以使用detach命令。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tmux detach <span class="token comment"># 断开当前会话，会话在后台运行</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>也许你觉得这个太麻烦了，是的，tmux的会话中，我们已经可以使用tmux快捷键了。使用快捷键组合<code>Ctrl+b</code> + <code>d</code>，三次按键就可以断开当前会话。</p>
+<h3 id="恢复会话"><a href="#恢复会话" class="headerlink" title="恢复会话"></a>恢复会话</h3><p>断开会话后，想要接着上次留下的现场继续工作，就要使用到tmux的attach命令了，语法为<code>tmux attach-session -t session-name</code>，可简写为<code>tmux a -t session-name</code> 或 <code>tmux a</code>。通常我们使用如下两种方式之一即可：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tmux a <span class="token comment"># 默认进入最新创建的一个会话</span>
+tmux a -t ada <span class="token comment"># 进入到名称为ada的会话</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="关闭会话"><a href="#关闭会话" class="headerlink" title="关闭会话"></a>关闭会话</h3><p>会话的使命完成后，一定是要关闭的。我们可以使用tmux的kill命令，kill命令有<code>kill-pane</code>、<code>kill-server</code>、<code>kill-session</code> 和 <code>kill-window</code>共四种，其中<code>kill-session</code>的语法为<code>tmux kill-session -t session-name</code>。如下：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tmux kill-session -t demo <span class="token comment"># 关闭demo会话</span>
+tmux kill-server <span class="token comment"># 关闭服务器，所有的会话都将关闭</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="查看所有的会话"><a href="#查看所有的会话" class="headerlink" title="查看所有的会话"></a>查看所有的会话</h3><p>管理会话的第一步就是要查看所有的会话，我们可以使用如下命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tmux list-session <span class="token comment"># 查看所有会话</span>
+tmux <span class="token function">ls</span> <span class="token comment"># 查看所有会话，提倡使用简写形式</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>tmux的所有指令，都包含同一个前缀，默认为<code>Ctrl+b</code>，输入完前缀过后，控制台激活，命令按键才能生效</p>
+<p>如果刚好处于会话中怎么办？别担心，我们可以使用对应的tmux快捷键<code>Ctrl+b</code> + <code>s</code>，此时tmux将打开一个会话列表，按上下键(⬆︎⬇︎)或者鼠标滚轮，可选中目标会话，按左右键（⬅︎➜）可收起或展开会话的窗口，选中目标会话或窗口后，按回车键即可完成切换。</p>
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210829160231373.png" alt="会话查看"></p>
+<h2 id="Tmux快捷指令"><a href="#Tmux快捷指令" class="headerlink" title="Tmux快捷指令"></a>Tmux快捷指令</h2><p>关于快捷指令，首先要认识到的是：tmux的所有指令，都包含同一个前缀，默认为<code>Ctrl+b</code>，输入完前缀过后，控制台激活，命令按键才能生效。前面tmux会话相关的操作中，我们共用到了两个快捷键<code>Ctrl+b</code> + <code>d</code>、<code>Ctrl+b</code> + <code>s</code>，但这仅仅是冰山一角，欲窥tmux庞大的快捷键体系，请看下表。</p>
+<h3 id="系统指令"><a href="#系统指令" class="headerlink" title="系统指令"></a>系统指令</h3><table>
+<thead>
+<tr>
+<th>前缀</th>
+<th>指令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Ctrl+b</code></td>
+<td><code>?</code></td>
+<td>显示快捷键帮助文档</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>d</code></td>
+<td>断开当前会话</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>D</code></td>
+<td>选择要断开的会话</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>Ctrl+z</code></td>
+<td>挂起当前会话</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>r</code></td>
+<td>强制重载当前会话</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>s</code></td>
+<td>显示会话列表用于选择并切换</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>:</code></td>
+<td>进入命令行模式，此时可直接输入<code>ls</code>等命令</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>[</code></td>
+<td>进入复制模式，按<code>q</code>退出</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>]</code></td>
+<td>粘贴复制模式中复制的文本</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>~</code></td>
+<td>列出提示信息缓存</td>
+</tr>
+</tbody></table>
+<h3 id="窗口（window）指令"><a href="#窗口（window）指令" class="headerlink" title="窗口（window）指令"></a>窗口（window）指令</h3><table>
+<thead>
+<tr>
+<th>前缀</th>
+<th>指令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Ctrl+b</code></td>
+<td><code>c</code></td>
+<td>新建窗口</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>&amp;</code></td>
+<td>关闭当前窗口（关闭前需输入<code>y</code> or <code>n</code>确认）</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>0~9</code></td>
+<td>切换到指定窗口</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>p</code></td>
+<td>切换到上一窗口</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>n</code></td>
+<td>切换到下一窗口</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>w</code></td>
+<td>打开窗口列表，用于且切换窗口</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>,</code></td>
+<td>重命名当前窗口</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>.</code></td>
+<td>修改当前窗口编号（适用于窗口重新排序）</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>f</code></td>
+<td>快速定位到窗口（输入关键字匹配窗口名称）</td>
+</tr>
+</tbody></table>
+<h3 id="面板（pane）指令"><a href="#面板（pane）指令" class="headerlink" title="面板（pane）指令"></a>面板（pane）指令</h3><table>
+<thead>
+<tr>
+<th>前缀</th>
+<th>指令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Ctrl+b</code></td>
+<td><code>"</code></td>
+<td>当前面板上下一分为二，下侧新建面板</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>%</code></td>
+<td>当前面板左右一分为二，右侧新建面板</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>x</code></td>
+<td>关闭当前面板（关闭前需输入<code>y</code> or <code>n</code>确认）</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>z</code></td>
+<td>最大化当前面板，再重复一次按键后恢复正常（v1.8版本新增）</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>!</code></td>
+<td>将当前面板移动到新的窗口打开（原窗口中存在两个及以上面板有效）</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>;</code></td>
+<td>切换到最后一次使用的面板</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>q</code></td>
+<td>显示面板编号，在编号消失前输入对应的数字可切换到相应的面板</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>{</code></td>
+<td>向前置换当前面板</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>}</code></td>
+<td>向后置换当前面板</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>Ctrl+o</code></td>
+<td>顺时针旋转当前窗口中的所有面板</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>方向键</code></td>
+<td>移动光标切换面板</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>o</code></td>
+<td>选择下一面板</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>空格键</code></td>
+<td>在自带的面板布局中循环切换</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>Alt+方向键</code></td>
+<td>以5个单元格为单位调整当前面板边缘</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>Ctrl+方向键</code></td>
+<td>以1个单元格为单位调整当前面板边缘（Mac下被系统快捷键覆盖）</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td><code>t</code></td>
+<td>显示时钟</td>
+</tr>
+</tbody></table>
+<p>tmux的丝滑分屏功能正是得益于以上系统、窗口、面板的快捷指令，只要你愿意，你就可以解除任意的快捷指令，然后绑上你喜欢的指令，当然这就涉及到它的可配置性了，请继续往下读。</p>
+<h2 id="自定义配置"><a href="#自定义配置" class="headerlink" title="自定义配置"></a>自定义配置</h2><div><div class="fold_hider"><div class="close hider_title">点击显/隐代码块(自定义配置)</div></div><div class="fold">
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#-------------------------------额外配置----------------------</span>
+<span class="token builtin class-name">set</span> -g prefix C-a <span class="token comment">#</span>
+unbind C-b <span class="token comment"># C-b即Ctrl+b键，unbind意味着解除绑定</span>
+<span class="token builtin class-name">bind</span> C-a send-prefix <span class="token comment"># 绑定Ctrl+a为新的指令前缀</span>
+
+<span class="token comment"># 从tmux v1.6版起，支持设置第二个指令前缀</span>
+set-option -g prefix2 <span class="token variable"><span class="token variable">`</span> <span class="token comment"># 设置一个不常用的</span><span class="token variable">`</span></span>键作为指令前缀，按键更快些
+
+<span class="token comment"># 绑定~/.tmux.conf配置文件生效快捷键为r</span>
+<span class="token builtin class-name">bind</span> r source-file ~/.tmux.conf <span class="token punctuation">\</span><span class="token punctuation">;</span> display-message <span class="token string">"Config reloaded.."</span>
+
+<span class="token comment">#新增面板绑定两个更常用的指令 -、|</span>
+unbind <span class="token string">'"'</span>
+<span class="token builtin class-name">bind</span> - splitw -v -c <span class="token string">'#{pane_current_path}'</span> <span class="token comment"># 垂直方向新增面板，默认进入当前目录</span>
+unbind %
+<span class="token builtin class-name">bind</span> <span class="token operator">|</span> splitw -h -c <span class="token string">'#{pane_current_path}'</span> <span class="token comment"># 水平方向新增面板，默认进入当前目录</span>
+
+<span class="token comment">#开启鼠标支持 对于tmux v2.1(2015.10.28)</span>
+<span class="token comment">#setw -g mode-mouse on # 支持鼠标选取文本等</span>
+<span class="token comment">#setw -g mouse-resize-pane on # 支持鼠标拖动调整面板的大小(通过拖动面板间的分割线)</span>
+<span class="token comment">#setw -g mouse-select-pane on # 支持鼠标选中并切换面板</span>
+<span class="token comment">#setw -g mouse-select-window on # 支持鼠标选中并切换窗口(通过点击状态栏窗口名称)</span>
+<span class="token comment">#tmux v2.1及以上的版本，仅需加入如下配置</span>
+set-option -g mouse on <span class="token comment"># 等同于以上4个指令的效果</span>
+
+<span class="token comment"># 切换面板的时候，需要按 ctlr+b 方向键，可以设置成 alt+方向键。配置文件里面的 M 表示 Meta，即 Alt 键。</span>
+<span class="token builtin class-name">bind</span> -n M-Left select-pane -L
+<span class="token builtin class-name">bind</span> -n M-Right select-pane -R
+<span class="token builtin class-name">bind</span> -n M-Up select-pane -U
+<span class="token builtin class-name">bind</span> -n M-Down select-pane -D
+
+<span class="token comment">#快速面板切换</span>
+<span class="token comment"># 绑定hjkl键为面板切换的上下左右键</span>
+<span class="token builtin class-name">bind</span> -r k select-pane -U <span class="token comment"># 绑定k为↑</span>
+<span class="token builtin class-name">bind</span> -r j select-pane -D <span class="token comment"># 绑定j为↓</span>
+<span class="token builtin class-name">bind</span> -r h select-pane -L <span class="token comment"># 绑定h为←</span>
+<span class="token builtin class-name">bind</span> -r l select-pane -R <span class="token comment"># 绑定l为→</span>
+
+<span class="token builtin class-name">bind</span> -r e lastp <span class="token comment"># 选择最后一个面板</span>
+<span class="token builtin class-name">bind</span> -r ^e last <span class="token comment"># 选择最后一个窗口</span>
+
+<span class="token builtin class-name">bind</span> -r ^u swapp -U <span class="token comment"># 与前一个面板交换位置</span>
+<span class="token builtin class-name">bind</span> -r ^d swapp -D <span class="token comment"># 与后一个面板交换位置</span>
+
+<span class="token comment">#面板大小调整</span>
+<span class="token comment"># 绑定Ctrl+hjkl键为面板上下左右调整边缘的快捷指令</span>
+<span class="token builtin class-name">bind</span> -r ^k resizep -U <span class="token number">10</span> <span class="token comment"># 绑定Ctrl+k为往↑调整面板边缘10个单元格</span>
+<span class="token builtin class-name">bind</span> -r ^j resizep -D <span class="token number">10</span> <span class="token comment"># 绑定Ctrl+j为往↓调整面板边缘10个单元格</span>
+<span class="token builtin class-name">bind</span> -r ^h resizep -L <span class="token number">10</span> <span class="token comment"># 绑定Ctrl+h为往←调整面板边缘10个单元格</span>
+<span class="token builtin class-name">bind</span> -r ^l resizep -R <span class="token number">10</span> <span class="token comment"># 绑定Ctrl+l为往→调整面板边缘10个单元格</span>
+
+<span class="token comment"># 安装插件保持会话</span>
+<span class="token builtin class-name">set</span> -g @plugin <span class="token string">'tmux-plugins/tpm'</span>
+<span class="token builtin class-name">set</span> -g @plugin <span class="token string">'tmux-plugins/tmux-sensible'</span>
+<span class="token builtin class-name">set</span> -g @plugin <span class="token string">'tmux-plugins/tmux-resurrect'</span>
+<span class="token builtin class-name">set</span> -g @plugin <span class="token string">'tmux-plugins/tmux-continuum'</span>
+
+
+<span class="token builtin class-name">set</span> -g @continuum-save-interval <span class="token string">'240'</span> <span class="token comment">#240分钟备份一次</span>
+<span class="token builtin class-name">set</span> -g @continuum-restore <span class="token string">'on'</span>  <span class="token comment"># 启用自动恢复</span>
+<span class="token builtin class-name">set</span> -g @resurrect-capture-pane-contents <span class="token string">'on'</span> <span class="token comment"># 开启恢复面板内容功能</span>
+
+
+run <span class="token string">'~/.tmux/plugins/tpm/tpm'</span> <span class="token comment"># 初始化tmux插件管理器(保证这行在~/.tmux.conf的非常靠后的位置)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</div></div>
+
+
+
+
+
+<iframe src="https://adalucky.com/simple/" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+
+
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Ada</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.adaLucky.com/other/zhong-duan-mei-hua/">https://www.adaLucky.com/other/zhong-duan-mei-hua/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Ada</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Tmux/">
+                                    <span class="chip bg-color">Tmux</span>
+                                </a>
+                            
+                                <a href="/tags/NeoVim/">
+                                    <span class="chip bg-color">NeoVim</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,twitter,facebook,google,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    .v[data-class="v"] .vwrap .vheader .vinput {
+      width: 32%;
+      border-bottom: 1px dashed #dedede;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+let metaPlaceholder = {"nick":"昵称","mail":"邮箱","link":"example.com"} ;
+//这里要换行
+new Valine({
+        el: '#vcomments',
+        appId: 'HvNn2fnND9DnBkt32cvR8g5x-gzGzoHsz',
+        appKey: '1FgE4n7EeWrdtvsJCcB20dfD',
+        notify: 'true' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-CN',
+        placeholder: '留下你的足迹..',
+        meta: ["nick", "mail", "link"],
+        recordIP: 'true' === 'true',
+        enableQQ: 'monsterid',
+        requiredFields: ["9f760f265b96a8d754fe66296f26d20e"],
+        master: ["9f760f265b96a8d754fe66296f26d20e"],
+        friends: ["cb3e577ff029d6073400d5557effd41f", ""],
+        tagMeta: ["博主", "小伙伴", "访客"],
+        metaPlaceholder: metaPlaceholder,
+
+    });
+
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            const nick = document.querySelector('input[name=nick]');
+            const reg = /^[A-Za-z0-9_-\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if (!email.value || !nick.value || !reg.test(email.value)) {
+                const str = `<div class="valert txt-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+                const vmark = document.querySelector('.vmark');
+                vmark.innerHTML = str;
+                vmark.style.display = 'block';
+
+                e.stopPropagation();
+
+                setTimeout(function() {
+                    vmark.style.display = 'none';
+                    vmark.innerHTML = '';
+                }, 2500);
+            }
+        }
+        }, true);
+</script>
+
+
+
+    
+
+    
+        <style>
+    .mvaline-card {
+        margin: 1.5rem auto;
+    }
+
+    .mvaline-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+</style>
+
+<div class="card mvaline-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="mvcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/minivaline/MiniValine.js"></script>
+<script>
+    new MiniValine({
+        el: '#mvcomments',
+        appId: 'HvNn2fnND9DnBkt32cvR8g5x-gzGzoHsz',
+        appKey: '1FgE4n7EeWrdtvsJCcB20dfD',
+        mode: 'DesertsP',
+        placeholder: '快来评论吧~',
+        pathname: window.location.pathname,
+        lang: 'zh-cn',
+        adminEmailMd5: '46606772953bed0812789d6dc955614e',
+        tagMeta: ["博主", "小伙伴", "访客"],
+        master: ["9f760f265b96a8d754fe66296f26d20e4"],
+        friends: ["cb3e577ff029d6073400d5557effd41f"],
+        math: true,
+        md: true,
+        enableQQ: true,
+        NoRecordIP: true,
+        visitor: true,
+        maxNest: 6,
+        pageSize: 6,
+        serverURLs: '',
+        emoticonUrl: ["https://cdn.jsdelivr.net/npm/alus@latest", "https://cdn.jsdelivr.net/gh/MiniValine/qq@latest", "https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@latest", "https://cdn.jsdelivr.net/gh/MiniValine/tieba@latest", "https://cdn.jsdelivr.net/gh/MiniValine/twemoji@latest", "https://cdn.jsdelivr.net/gh/MiniValine/weibo@latest"],
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/performance/xing-neng-ce-shi-ji-chu-zhi-shi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928013346.png" class="responsive-img" alt="性能测试基础知识">
+                        
+                        <span class="card-title">性能测试基础知识</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本篇幅主要对性能测试中的一些基础预备知识进行描述，其中包括专业名称、指标参数、历史发展、性能测试流程等作为一个简单的知识储备为后期的篇幅打下基础
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Performance/" class="post-category">
+                                    Performance
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%8C%87%E6%A0%87%E5%8F%82%E6%95%B0/">
+                        <span class="chip bg-color">指标参数</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B/">
+                        <span class="chip bg-color">性能测试流程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/security/thinkphp/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/article/security/thinkphp.jpg" class="responsive-img" alt="thinkphp">
+                        
+                        <span class="card-title">thinkphp</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            ThinkPHP是一个快速、兼容而且简单的轻量级国产PHP开发框架，诞生于2006年初，原名FCS，2007年元旦正式更名为ThinkPHP，遵循Apache2开源协议发布，从Struts结构移植过来并做了改进和完善，同时也借鉴了国外很多优
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Security/" class="post-category">
+                                    Security
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/thinkphp/">
+                        <span class="chip bg-color">thinkphp</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+
+    <!-- 仿明信片书信 -->
+    <style>
+        .ititle {
+            margin: 15px 0;
+            text-align:center;
+            font-family: 'Architects Daughter', cursive;
+        }
+        .ipage {
+            line-height: 30px;
+            margin: 0 auto;
+            padding: 15px 32px 29px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
+            -moz-border-radius-bottomleft: 20px 500px;
+            -moz-border-radius-bottomright: 500px 30px;
+            -moz-border-radius-topright: 5px 100px; 
+            -webkit-border-bottom-left-radius: 20px 500px;
+            -webkit-border-bottom-right-radius: 64px 10px;
+            -webkit-border-top-right-radius: 5px 100px;    
+            border-bottom-left-radius: 20px 500px;
+            border-bottom-right-radius: 64px 10px;
+            border-top-right-radius: 5px 100px;           
+            -webkit-background-size: 100% 30px;
+            -moz-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.2);
+            -webkit-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 1px 0 #F6EF97;
+            position: relative;
+        }
+        .izhengwen {
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            height: auto;
+            background: repeating-linear-gradient(to bottom, #f9f9f9, #f9f9f9 31px, #6BA2D8 1px, #f9f9f9);
+            background-size: 100% 32px;
+        }
+        #articleContent p {
+            margin: 0
+        }
+        .ititle {
+            font-family: 'Architects Daughter', cursive;
+            font-size: 1.45rem!important;
+            padding: 10px auto;
+        }
+        .izhengwen p {
+            position: relative;
+            line-height: 2.2rem!important;
+            text-indent: 2em;
+            font-family: 'Architects Daughter', cursive!important;
+            font-size: 1.45rem!important;
+        }
+        .ipage::before {
+            content: " ";
+            display: inline-block;
+            position: absolute;
+            top: 0px;
+            bottom: 0;
+            right: 52px;
+            z-index: 4;
+            width: 4px;
+            height: 100%;
+            border-left: 1px solid #fca1a1;
+        }
+        .izhengwen p:nth-child(odd):before {
+            content: " ";
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: -16px;
+            z-index: 3;
+            width: 24px;
+            height: 24px;
+            background-color: #fff;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
+        }
+        .ipage:after {
+            content: " ";
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 52px;
+            z-index: 3;
+            width: 4px;
+            height: 100%;
+            border-left: 4px double #fca1a1;
+        }
+        .ipage p {
+            padding: 0 2em;
+            color: #333!important;
+        }
+        body.dark .ipage {
+            opacity: 0.85;
+        }
+        /*小屏幕下(手机类)的样式*/
+        @media only screen and (max-width: 600px) {
+            .ipage {
+                padding: 15px 23px 29px;
+            }
+            .ipage:after {
+                left: 36px;
+            }
+            .ipage::before {
+                right: 36px;    
+            }
+            .ipage p {
+                padding: 0 0.9em;
+            }
+        }
+    </style>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Ada<br />'
+            + '文章作者: Ada<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2022</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">Ada</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">177.3k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "7";
+                    var startDate = "31";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.jpg" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2021020423号-1</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/adaLucky" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:958472019@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=958472019" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 958472019" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?547a0e4ab4c40fa915b034fbd877cb17";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+<!-- 深色模式按钮 -->
+    <script>
+        if (localStorage.getItem('dark') === '1') {
+        document.body.classList.add('dark');
+        }
+        else if (new Date().getHours() >= 22 || new Date().getHours() < 7) {
+        document.body.classList.add('dark');
+        } 
+        else if (matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+        }
+    </script>
+    <a onclick="switchNightMode()" id="sma">
+        <i class="fas fa-lightbulb" id="nightMode" aria-hidden="true"></i>
+    </a>
+
+    <!-- 天气接口控件   -->
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "841d15a0"
+        });
+        daovoice('update');
+    </script>
+    
+
+	
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+    
+    <!--知乎卡片链接-->
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+    <!--显示或隐藏内容-->
+<!--      这一行页面控制台有报错不引用-->
+<!--     <script type="text/javascript" src='http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js'></script> -->
+    <script type="text/javascript" src='/js/after_jquery.js'></script>
+    <link href='/css/fold.css' rel='stylesheet' type='text/css' />
+
+
+<script>(function (w, d, s, id) {
+            if (typeof (w.webpushr) !== 'undefined') return; w.webpushr = w.webpushr || function () { (w.webpushr.q = w.webpushr.q || []).push(arguments) }; var js, fjs = d.getElementsByTagName(s)[0]; js = d.createElement(s); js.id = id; js.async = 1; js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window, document, 'script', 'webpushr-jssdk'));webpushr('setup', { 'key': 'BLGpKf2yg8IV9PavVEP_cT5xr8fP_ePJ9ypV_28kYa9Nh5azvup1XTjW1ilsk7qD2eLPg22nGykpZnADaIwnmHo' });</script></body>
+
+</html>

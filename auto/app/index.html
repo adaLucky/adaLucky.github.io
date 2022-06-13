@@ -1,0 +1,2324 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="app, ada Ada adalucky 性能测试 安全测试 自动化测试 测试">
+    <meta name="description" content="性能测试 | 自动化测试 | web安全测试">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google-site-verification" content="pBWoGvVEP36FzzS4xIpoMejc5UKi3RKcxd9rWWcjiDg" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>app | Ada</title>
+
+    <link rel="icon" type="image/png" href="/medias/16229390604952.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?aaa6c944b0ed07922901d7fc571a171d";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Ada" type="application/atom+xml">
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20210101002438.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/16229390604952.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Ada</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/census">
+          
+          <i class="fas fa-layer-group" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>统计</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-paper-plane" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>时轴</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tag" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-heartbeat" style="zoom: 0.6;"></i>
+      
+      <span>清单</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/List/music">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>音乐</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/List/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>相册</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/List/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>视频</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tools" class="waves-effect waves-light">
+      
+      <i class="fas fa-suitcase" style="zoom: 0.6;"></i>
+      
+      <span>百宝箱</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-link" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/about">
+          
+          <i class="fas fa-user-circle" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>我的</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/contact">
+          
+          <i class="fas fa-envelope" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>留言</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about/journal">
+          
+          <i class="fa fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>日志</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/dashang">
+          
+          <i class="fas fa-hand-holding-usd" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>赞助</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/16229390604952.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Ada</div>
+        <div class="logo-desc">
+            
+            性能测试 | 自动化测试 | web安全测试
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-archive"></i>
+			
+			归档
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/census " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-layer-group" style="position: absolute;left:50px" ></i>
+			      
+		          <span>统计</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-paper-plane" style="position: absolute;left:50px" ></i>
+			      
+		          <span>时轴</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-tag" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-heartbeat"></i>
+			
+			清单
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/List/music " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>音乐</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/List/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>相册</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/List/movies " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>视频</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tools" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-suitcase"></i>
+			
+			百宝箱
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-link"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/about " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-user-circle" style="position: absolute;left:50px" ></i>
+			      
+		          <span>我的</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/contact " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-envelope" style="position: absolute;left:50px" ></i>
+			      
+		          <span>留言</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/about/journal " style="margin-left:75px">
+				  
+				   <i class="fa fa fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>日志</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/dashang " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-hand-holding-usd" style="position: absolute;left:50px" ></i>
+			      
+		          <span>赞助</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/adaLucky/adaLucky.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/adaLucky/adaLucky.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/article/auto/appium.jpeg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">app</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        background-color: white;
+        width: 345px;
+        padding-left: 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+    
+    #toc-content {
+        height: calc(100vh - 300px);
+        overflow: scroll;
+
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+        bottom: 170px;<!--  -->
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/app/">
+                                <span class="chip bg-color">app</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Auto/" class="post-category">
+                                Auto
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-02-18
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-06-13
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>Appium是一个开源的，适用于原生或混合移动应用（ hybrid mobile apps ）的自动化测试工具，Appium应用WebDriver: JSON wire protocol驱动安卓和iOS移动应用。Appium选择了Client/Server的设计模式。只要client能够发送http请求给server，那么的话client用什么语言来实现都是可以的，这就是如何做到支持多语言的原因；</p>
+<a id="more"></a>
+
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>需要安装的环境和程序：==adb== ==Appium== ==jdk== </li>
+</ul>
+<p><a href="https://developer.android.google.cn/studio?hl=zh_cn" target="_blank" class="LinkCard" style="text-decoration: none;">Android</a></p>
+<h1 id="adb环境"><a href="#adb环境" class="headerlink" title="adb环境"></a>adb环境</h1><h2 id="windows安装"><a href="#windows安装" class="headerlink" title="windows安装"></a>windows安装</h2><ul>
+<li>前置：电脑已==安装手机驱动==，==usb==调试模式已打开（开发者选项和usb模拟点击根据情况后面会需要打开）</li>
+<li>1.下载安装包（32/64位），解压到非中文路径且路径名无特殊字符</li>
+<li>2.配置系统环境变量和 path 路径</li>
+</ul>
+<p><img src="http://geojsonpublic.510link.com/notes/ada/image-20210723113410445.png" alt="配置系统变量"></p>
+<p><img src="http://geojsonpublic.510link.com/notes/ada/image-20210723113520855.png" alt="配置环境变量path路径"></p>
+<h2 id="mac安装"><a href="#mac安装" class="headerlink" title="mac安装"></a>mac安装</h2><h3 id="下载cmdline-tools"><a href="#下载cmdline-tools" class="headerlink" title="下载cmdline-tools"></a>下载cmdline-tools</h3><ul>
+<li>下载cmdline-tools cmdline-tools的作用是通过命令行去控制下载 SDK 工具包如：platform-tools tools build-tool 等</li>
+<li>创建目录：/Users/ada/Library/Android/sdk/cmdline-tools/latest 存放下载的 cmdline-tools</li>
+<li>下载链接：<a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio?hl=zh_cn">https://developer.android.google.cn/studio?hl=zh_cn</a> （页面滑动往下面拉一点找下）</li>
+</ul>
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210724104514141.png" alt="下载cmdline-tools"></p>
+<h3 id="文件解压"><a href="#文件解压" class="headerlink" title="文件解压"></a>文件解压</h3><ul>
+<li>默认情况下sdk同级的其它文件都是没有的，我这边是因为后面下载了工具包所以截图里面有</li>
+</ul>
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210724110059375.png" alt="文件夹创建和解压"></p>
+<h3 id="sdkmanager-命令行操作"><a href="#sdkmanager-命令行操作" class="headerlink" title="sdkmanager 命令行操作"></a>sdkmanager 命令行操作</h3><ul>
+<li>由于没有配置全局环境，需要先切换到bin目录 执行./sdkmanager</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 切换路径</span>
+<span class="token builtin class-name">cd</span> /Users/ada/Library/Android/sdk/cmdline-tools/latest/bin
+<span class="token comment"># 包管理查看</span>
+./sdkmanager --list<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210724111351959.png" alt="sdkmanager --list"></p>
+<h3 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h3><ul>
+<li>通过 <code>sdkmanager</code> 安装 <code>build-tools</code>  <code>platform-tools</code> <code>tools</code></li>
+<li>语法参考官方：<a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/command-line/sdkmanager?hl=zh_cn">https://developer.android.google.cn/studio/command-line/sdkmanager?hl=zh_cn</a></li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#安装软件包</span>
+sdkmanager packages <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token comment">#官方示例 sdkmanager 包名 可选参数</span>
+<span class="token comment">#例如，下面展示了如何安装最新的平台工具（包括 adb 和 fastboot）以及适用于 API 级别 28 的 SDK 工具：</span>
+sdkmanager <span class="token string">"platform-tools"</span> <span class="token string">"platforms;android-28"</span> <span class="token comment"># 这个是官方的示例，根据意思如果不加;号指定版本就是最新的,多个包用空格隔开，用""括起来</span>
+<span class="token comment">#下载build-tools指定版本</span>
+sdkmanager <span class="token string">"build-tools;30.0.2"</span>
+<span class="token comment">#卸载软件包</span>
+sdkmanager --uninstall packages <span class="token punctuation">[</span>options<span class="token punctuation">]</span>
+sdkmanager --uninstall --package_file<span class="token operator">=</span>package_file <span class="token punctuation">[</span>options<span class="token punctuation">]</span>
+<span class="token comment">#更新已安装的软件包</span>
+sdkmanager --update <span class="token punctuation">[</span>options<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210724113109421.png" alt="下载包"></p>
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210724113109421-20220218222034554.png" alt="下载包"></p>
+<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><ul>
+<li>配置==系统环境变量==<ul>
+<li>注意上面的高亮，是配置系统环境变量，和windows一样有用户变量，只对当前用户有效，系统变量对所有用户有效，<code>Appium在启动后只认系统变量</code>如果设置的是用户变量到时候可能一直提示你没有设置 ==JAVA_HOME==  ==ANDROID_HOME==</li>
+<li>在Macx系统中 ==/etc/profile== 是系统变量配置文件 ==~/.bash_profile== 是用户变量</li>
+<li>在编辑 /etc/profile 文件的时候如果提示没有权限,那么找到 /etc 文件夹和 profile 文件添加用户的读写权限 修改这种配置文件记得先备份，养成良好的习惯</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210724114800088.png" alt="添加文件编辑权限"></p>
+<ul>
+<li>Mac配置系统变量 ==Android_HOME==  ==JAVA_HOME==（再提示一遍是系统变量）</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#步骤一： 打开系统变量配置文件 和 ~/.zshrc文件</span>
+<span class="token function">open</span> -e /etc/profile
+<span class="token function">open</span> -e ~/.zshrc
+<span class="token comment"># 步骤二：添加配置（/etc/profile文件）保存</span>
+<span class="token comment"># Java系统变量</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>/usr/libexec/java_home<span class="token variable">)</span></span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/bin:<span class="token environment constant">$PATH</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">CLASS_PATH</span><span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/lib
+
+<span class="token comment"># Android系统变量</span>
+<span class="token assign-left variable">AAPT_HOME</span><span class="token operator">=</span>/Users/ada/Library/Android/sdk/build-tools/30.0.2/
+<span class="token builtin class-name">export</span> AAPT_HOME
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span><span class="token variable">$AAPT_HOME</span>
+
+<span class="token assign-left variable">ANDROID_HOME</span><span class="token operator">=</span>/Users/ada/Library/Android/sdk
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$ANDROID_HOME</span>/tools:<span class="token environment constant">$PATH</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$ANDROID_HOME</span>/tools/bin:<span class="token environment constant">$PATH</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$ANDROID_HOME</span>/platform-tools:<span class="token environment constant">$PATH</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$ANDROID_HOME</span>/build-tools/30.0.2:<span class="token environment constant">$PATH</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$ANDROID_HOME</span>/emulator:<span class="token environment constant">$PATH</span>
+<span class="token builtin class-name">export</span> ANDROID_HOME
+
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">ANDROID_SDK_ROOT</span><span class="token operator">=</span>/Users/ada/Library/Android/sdk
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$ANDROID_SDK_ROOT</span>/emulator:<span class="token variable">$ANDROID_SDK_ROOT</span>/tools:<span class="token environment constant">$PATH</span>
+<span class="token comment"># 步骤三：添加配置（~/.zshrc文件）保存</span>
+<span class="token builtin class-name">source</span> /etc/profile
+<span class="token builtin class-name">source</span> ~/.bash_profile
+<span class="token comment">#步骤四：source 生效一下</span>
+<span class="token builtin class-name">source</span> /etc/profile
+<span class="token builtin class-name">source</span> ~/.zshrc <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210724120624278.png" alt="配置Java、Android系统变量"></p>
+<h2 id="adb环境验证"><a href="#adb环境验证" class="headerlink" title="adb环境验证"></a>adb环境验证</h2><ul>
+<li>在cmd、终端输入 ==adb version==查看是否安装成功</li>
+</ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment">#查看adb的版本</span>
+adb version
+<span class="token comment">#查看设备连接</span>
+adb devices<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210723113959083.png" alt="adb版本查看"></p>
+<h2 id="Appium启动验证"><a href="#Appium启动验证" class="headerlink" title="Appium启动验证"></a>Appium启动验证</h2><p><img src="http://blog.adalucky.com/notes/ada/image-20210724123306877.png" alt="Appium启动验证"></p>
+<h2 id="uiautomatorviewer启动校验"><a href="#uiautomatorviewer启动校验" class="headerlink" title="uiautomatorviewer启动校验"></a>uiautomatorviewer启动校验</h2><ul>
+<li>uiautomatorviewer 是 adb 工具包里面的一个元素探测工具，用于定位识别元素为后期自动化ui元素定位提供基础数据</li>
+</ul>
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210723114535723.png" alt="启动uiautomatorviewer"></p>
+<h1 id="adb常用命令"><a href="#adb常用命令" class="headerlink" title="adb常用命令"></a>adb常用命令</h1><h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><h3 id="查看当前版本"><a href="#查看当前版本" class="headerlink" title="查看当前版本"></a>查看当前版本</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#查看当前的 adb 版本 (这个版本好像低于38 39还是哪个版本以下的如果执行键盘输入中文到app输入框会有乱码现象，之前用DeskDock键盘输入)</span>
+adb version<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210723141132382.png" alt="查看adb版本"></p>
+<h3 id="设备检查及输入"><a href="#设备检查及输入" class="headerlink" title="设备检查及输入"></a>设备检查及输入</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#查看adb的帮助手册</span>
+adb --help
+<span class="token comment"># 检查连接到电脑的安卓设备 </span>
+adb devices
+<span class="token comment">#如果有检测到可以验证一下：模拟点击手机返回的命令，手机会模拟返回按键操作，有反应代表连接正常</span>
+adb shell input keyevent
+<span class="token comment">#状态 device 在线   offline 离线  unauthorized 未授权  List of devices attached  未检测到</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210723150953920.png" alt="检测设备"></p>
+<h3 id="连接模拟器"><a href="#连接模拟器" class="headerlink" title="连接模拟器"></a>连接模拟器</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#有时候没有真机，或者真机的版本太高不好获得root权限可以采用模拟器 推荐模拟器【夜神、雷电模拟器】</span>
+adb connect <span class="token number">127.0</span>.0.1:62001 <span class="token comment">#(先把模拟器打开)，127.0.0.1指的使用本机，62001是夜神模拟器的端口号，根据你的模拟器端口可能会有变化</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="http://geojsonpublic.510link.com/notes/ada/image-20210723152330609.png" alt="连接到模拟器"></p>
+<h2 id="设备操作"><a href="#设备操作" class="headerlink" title="设备操作"></a>设备操作</h2><h3 id="进入设备终端"><a href="#进入设备终端" class="headerlink" title="进入设备终端"></a>进入设备终端</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#进入到设备的终端控制台 就像xshell连接服务器一样，andriod底层是基于linux的，需要连接，然后也可以用linux命令</span>
+adb shell
+<span class="token comment">#退出终端 当需要回退到cmd窗口进行adb命令操作时</span>
+<span class="token builtin class-name">exit</span> 或者 adb shell<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="从手机中拉取文件至本地"><a href="#从手机中拉取文件至本地" class="headerlink" title="从手机中拉取文件至本地"></a>从手机中拉取文件至本地</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#将手机中的文件拉取到你自己的电脑本地，一般会用于日志的拉取或者tcpdump对网卡的抓包信息</span>
+adb pull <span class="token operator">&lt;</span>手机路径，源文件<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>本机路径，目标文件<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210723154709253.png" alt="拉取文件"></p>
+<h3 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#将本地的文件上传/推送到设备中 </span>
+adb push <span class="token operator">&lt;</span>本机路径，源文件<span class="token operator">&gt;</span>  <span class="token operator">&lt;</span>手机路径，目标路径<span class="token operator">&gt;</span> /新命名文件
+<span class="token comment">#这里有个小窍门，就是push后面本地文件，可以直接找到拖进去，不用手动输本地路径，可以重复推送，自动覆盖</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://geojsonpublic.510link.com/notes/ada/image-20210723155033298.png" alt="上传文件"></p>
+<h3 id="手机日志"><a href="#手机日志" class="headerlink" title="手机日志"></a>手机日志</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#清理main缓存区域的日志</span>
+adb logcat -c
+<span class="token comment">#清理系统事件信息日志</span>
+adb logcat -c -b events
+<span class="token comment">#清理手机内所有日志的命令(如果手机之前的日志不需要了一般用这个)</span>
+adb logcat -c -b main -b events -b radio -b system
+<span class="token comment">#拉取日志 这里本地路径必须是一个目录，前面是大于符号重定向，后面要给拉取的日志取一个别名，不然拉取会失败，日志是动态的，所以估计3-5秒拉取完成后用ctrl+c/z/x 结束根据电脑快捷键决定</span>
+adb logcat  <span class="token operator">&gt;</span> <span class="token operator">&lt;</span>本地路径<span class="token operator">&gt;</span>  命名日志名.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#可以通过adb输入一些指令，让设备做对应的动作，比如模拟我们的滑动，截屏，输入等等</span>
+<span class="token comment">#截屏</span>
+adb shell screencap -p 文件输出路径/fileName.png
+adb shell screencap -p /sdcard/01.png <span class="token comment">#截屏并保存在/sdcard/01.png这个路径</span>
+<span class="token comment">#录屏</span>
+adb shell screenrecord /sdcard/fileName.mp4     <span class="token comment">#ctrl+c结束  --size 设置分辨率  --bit-rate 指定比特率  --rotate  旋转90°</span>
+<span class="token comment">#模拟点击返回按钮</span>
+adb shell input keyevent
+<span class="token comment">#模拟手势滑动点击（实现微信跳一跳高分核心方法）</span>
+adb shell input touchscreen swipe x1 y1 x2 y2 <span class="token function">time</span> <span class="token comment">#(x1,y1)：起始点击点的x y位置  (x2,y2)：终止点击点的x位置  time：操作耗时毫秒数</span>
+<span class="token comment"># 单击屏幕屏幕（点击）</span>
+adb shell input tap X坐标 Y坐标<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h2><h3 id="安装-卸载APP"><a href="#安装-卸载APP" class="headerlink" title="安装/卸载APP"></a>安装/卸载APP</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#和上传一样可以直接拖，注意格式是apk的文件（手机usb模式换成文件传输，不能为充电模式），成功后会提示success    提示：adb: failed to install，表示有安装过同名的包，可以采用下面的覆盖安装</span>
+adb <span class="token function">install</span> <span class="token operator">&lt;</span>安装包路径<span class="token operator">&gt;</span>
+<span class="token comment">#覆盖安装</span>
+adb <span class="token function">install</span> -r  <span class="token operator">&lt;</span>安装包路径<span class="token operator">&gt;</span>
+<span class="token comment">#静默安装 这个不会，据说在比较老的Android版本中支持，它的作用就是安装后同时赋予默认的权限，在自动化测试时候如果监测到没有安装对应的APP那么可以采用尝试，静默安装</span>
+
+<span class="token comment">#卸载 提示success,代表成功</span>
+adb uninstall <span class="token operator">&lt;</span>应用包名，一般是com.xxxx.xxxx格式<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210723161135912.png" alt="卸载APP"></p>
+<h3 id="包名及入口获取"><a href="#包名及入口获取" class="headerlink" title="包名及入口获取"></a>包名及入口获取</h3><ul>
+<li>包名、类名、主入口</li>
+<li>package（包名）：在APP中每个APP都拥有唯一的包名不能重复，如果重复了就会提示你已经安装是否覆盖安装</li>
+<li>MainActivity（主入口）：每个APP都有一个主要函数的入口</li>
+<li>activityName（类名）：可以看做是每个页面的一个标识句柄</li>
+</ul>
+<h4 id="前台页面查看"><a href="#前台页面查看" class="headerlink" title="前台页面查看"></a>前台页面查看</h4><h5 id="查看包名类名"><a href="#查看包名类名" class="headerlink" title="查看包名类名"></a>查看包名类名</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#把软件打开保持前台界面，运行命令</span>
+adb shell dumpsys activity <span class="token operator">|</span> <span class="token function">find</span> <span class="token string">"mFocusedActivity"</span> <span class="token comment">#安卓7以内</span>
+adb shell dumpsys activity <span class="token operator">|</span> <span class="token function">find</span> <span class="token string">"mResumedActivity"</span> <span class="token comment">#安卓8以上</span>
+<span class="token comment">#Mac查看包名、主入口</span>
+adb shell dumpsys window w <span class="token operator">|</span><span class="token function">grep</span> <span class="token punctuation">\</span>/ <span class="token operator">|</span><span class="token function">grep</span> <span class="token assign-left variable">name</span><span class="token operator">=</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>u0 com.xxxx.xxxx/  uo和/中间的就是包名，以com开头，包名后面跟类名，如果没有查到先把软件关了，重新打开 ，F A记得大写（小驼峰，第一个小写，后面首字母大写）</li>
+</ul>
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210723162335666.png" alt="前台查看包名类名"></p>
+<h5 id="查看启动入口"><a href="#查看启动入口" class="headerlink" title="查看启动入口"></a>查看启动入口</h5><ul>
+<li>先把需要查询的App关掉，然后清除日志，再打开“动态监控”，然后启动App</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#清除日志（关闭 app 后执行）</span>
+adb logcat -c
+<span class="token comment"># 动态监控</span>
+adb logcat <span class="token operator">|</span> <span class="token function">find</span> <span class="token string">"Display"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210723164329438.png" alt="查看主入口"></p>
+<h4 id="后台查看"><a href="#后台查看" class="headerlink" title="后台查看"></a>后台查看</h4><ul>
+<li>在不运行APP的情况下，直接查看本地的APP文件</li>
+<li>需要在adb 的 build-tools目录下（aapt同级目录）启动cmd窗口或者配置path路径</li>
+</ul>
+<h5 id="查看包名和启动入口"><a href="#查看包名和启动入口" class="headerlink" title="查看包名和启动入口"></a>查看包名和启动入口</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看.apk安装包的包名和启动入口</span>
+aapt dump badging apk文件路径<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210723163208327.png" alt="查看包名和启动入口"></p>
+<h5 id="查看包名"><a href="#查看包名" class="headerlink" title="查看包名"></a>查看包名</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#查看文件的包名</span>
+aapt dump badging C:<span class="token punctuation">\</span>Users<span class="token punctuation">\</span>Administrator<span class="token punctuation">\</span>Desktop<span class="token punctuation">\</span>inc.apk<span class="token punctuation">(</span>APP的路径<span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token function">find</span> <span class="token string">"package"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210723163444450.png" alt="查看apk文件包名"></p>
+<h5 id="查看启动入口-1"><a href="#查看启动入口-1" class="headerlink" title="查看启动入口"></a>查看启动入口</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">aapt dump badging C:<span class="token punctuation">\</span>Users<span class="token punctuation">\</span>Administrator<span class="token punctuation">\</span>Desktop<span class="token punctuation">\</span>inc.apk <span class="token operator">|</span> <span class="token function">find</span> <span class="token string">"launchable-activity"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="http://geojsonpublic.510link.com/notes/ada/image-20210723163651451.png" alt="查看apk文件启动入口"></p>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><h3 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#</span>
+dumpsys meminfo 包名
+<span class="token comment">#读取电量和温度</span>
+adb shell dumpsys battery
+<span class="token comment"># 内存使用信息</span>
+adb shell dumpsys meminfo
+<span class="token comment">#查看启动时间（一般是看冷启动）  (注意大小写，和更换包名，thistime totaltime里面的数据就是启动时间)</span>
+adb shell am start -W com.lemon.lemonban/.activity.WelcomeActivity
+<span class="token comment">#获取当前设备的IP地址（wifi） </span>
+adb shell <span class="token string">"ip addr | grep global"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#启动应用</span>
+adb shell am start -n 包名/启动入口
+adb shell am start -n com.inc.mobile.manager/com.inc.mobile.manager.view.ui.activity.LaunchActivity
+<span class="token comment">#多台设备下指定一台设备操作</span>
+adb -s devicesName 指令       
+<span class="token comment">#adb进程服务</span>
+adb start-server 重启服务
+adb kill-server  关闭服务 
+<span class="token comment">#Wifi连接/断开设备</span>
+adb tcpip port设置端口如5555<span class="token punctuation">(</span>需连接usb<span class="token punctuation">)</span>
+adb connect <span class="token function">ip</span> 连接ip设备
+adb disconnect ip:port  取消连接ip设备
+<span class="token comment">#重启/关闭设备</span>
+adb <span class="token function">reboot</span> <span class="token comment">#重启</span>
+adb shell <span class="token function">reboot</span> -p <span class="token comment">#关机</span>
+<span class="token comment">#清除程序数据</span>
+adb shell pm <span class="token function">clear</span> packageName
+<span class="token comment">#程序安装与卸载</span>
+adb <span class="token function">install</span> ***.apk    <span class="token comment">#安装</span>
+adb <span class="token function">install</span> -t ***.apk <span class="token comment">#覆盖安装</span>
+adb <span class="token function">install</span> -r -t ***.apk <span class="token comment">#RUN出来的包是test-onlu的安装</span>
+adb uninstall packageName  <span class="token comment">#卸载不保留数据</span>
+adb uninstall -k packageName <span class="token comment">#卸载保留数据</span>
+<span class="token comment">#查看已安装的应用</span>
+adb shell pm list packages 查看所有应用
+adb shell pm list packages -s  查看系统应用
+adb shell pm list packages -3  查看三方应用
+<span class="token comment">#查看当前聚焦程序包名、类名</span>
+adb shell dumpsys activity <span class="token operator">|</span> <span class="token function">find</span> <span class="token string">"mFocusedActivity"</span>  安卓≤7（前台运行）
+adb shell dumpsys activity <span class="token operator">|</span> <span class="token function">find</span> <span class="token string">"mResumedActivity"</span>   安卓≥8（前台运行程序）
+<span class="token comment">#查看apk安装包包名、启动入口、元素探测</span>
+aapt dump badging ***.apk    <span class="token comment">#查看apk的包名和启动入口</span>
+aapt dump badging ***.apk <span class="token operator">|</span> <span class="token function">find</span> <span class="token string">"package"</span> <span class="token comment">#找apk包名</span>
+aapt dump badging ***.apk <span class="token operator">|</span> <span class="token function">find</span> <span class="token string">"launchable-activity"</span> <span class="token comment">#找apk启动入口</span>
+C:<span class="token punctuation">\</span>Users<span class="token punctuation">\</span>Administrator<span class="token operator">&gt;</span>uiautomatorviewer   <span class="token comment">#启动元素探测bat文件</span>
+<span class="token comment">#监控crash/ANR事件：</span>
+adb shell am monitor
+<span class="token comment">#其它</span>
+adb shell dumpsys meminfo PID  内存监控
+adb shell <span class="token string">"ip addr | grep global"</span> 获取设备的IP地址
+adb shell am start -W 包名/启动入口  查看启动时间（一般是看冷启动）
+adb shell wm size  查看屏幕分辨率
+adb shell dumpsys battery 读取电量和温度
+adb shell dumpsys meminfo 内存使用信息
+adb shell input keyevent <span class="token number">26</span> <span class="token number">82</span><span class="token punctuation">(</span><span class="token number">26</span>息屏或唤醒/82菜单键，上滑解锁可以一起用<span class="token punctuation">)</span>
+<span class="token comment">#keyevent对应值: https://www.cnblogs.com/zhuminghui/p/10470865.html</span>
+<span class="token comment">#https://blog.csdn.net/xiezhiming1234/article/details/82117709</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="通过wifi连接adb"><a href="#通过wifi连接adb" class="headerlink" title="通过wifi连接adb"></a>通过wifi连接adb</h3><ul>
+<li>0.首先==个人不推荐wifi连接，不稳定==，如果需要使用需要满足手机和电脑在同一局域网</li>
+<li>1.保持usb连接,adb devices能监测到设备</li>
+<li>2.==adb tcpip 5555==  确定你的手机和电脑通讯号</li>
+<li>3.拔掉usb线，再通过 ==adb connect 手机ip地址==（跟模拟器差不多一个原理，不需要再输端口号了，上面确定过了，手机IP地址，找到wifi,然后找到详细信息里面的地址，需要在局域网内）</li>
+<li>4.adb 网络断开设备：==adb disconnect  &lt;设备的IP地址&gt;:5555== 即可断开</li>
+<li>5.如果多设备连接的情况，需要给每个设备设置不同的tcpip<br>==adb -s822QADU5246SE tcpip 1996==<br>==adb -s f06d7a07 tcpip 1997==  </li>
+<li>如果一直连接不上，回想一下你的设备会在局域网其它电脑里面连接过该设备吗，手机开发者模式—》调试—》撤销usb调试  然后再试下 第二步 adb tcpip 5555 这个输入一次即可（在不撤销usb调试均有效），后面不用usb 直接进入第三步开始连接  ==不要同一部手机同时使用usb和wifi，会出问题==</li>
+</ul>
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210723171428438.png" alt="wifi连接adb"></p>
+<h1 id="appium"><a href="#appium" class="headerlink" title="appium"></a>appium</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>Appium 是移动端自动化测试工具，市面上还有很多如 Robotium UIAutomator </li>
+<li>Native apps（原生应用）：仅使用Android或iOS的标准SDK编写的应用；</li>
+<li>Web apps（移动浏览器应用）：用移动平台的浏览器访问的应用；</li>
+<li>Hybrid apps（混合应用）：把一个基于webview实现的功能进行包装的应用。**<a target="_blank" rel="noopener" href="https://blog.csdn.net/maetelibom/article/details/51557941">更多资料</a>**</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>栏目</th>
+<th>Appium</th>
+<th>Robotium</th>
+<th>UIAutomator</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>是否支持跨进程</td>
+<td>是</td>
+<td>否</td>
+<td>是</td>
+</tr>
+<tr>
+<td>是否支持跨平台（Android、iOS）</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>是否支持脚本录制</td>
+<td>是</td>
+<td>需付费</td>
+<td>否</td>
+</tr>
+<tr>
+<td>是否支持无源码的APK</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>支持的编程语言</td>
+<td>主流语言均支持</td>
+<td>Java</td>
+<td>Java</td>
+</tr>
+<tr>
+<td>支持的应用类型</td>
+<td>Native apps、hybrid apps、mobile web apps</td>
+<td>Native apps、hybrid apps、mobile web apps</td>
+<td>Native apps、hybrid apps</td>
+</tr>
+</tbody></table>
+<h2 id="安装Appium-Desktop"><a href="#安装Appium-Desktop" class="headerlink" title="安装Appium Desktop"></a>安装Appium Desktop</h2><p>📌1.安装后首次打开如果为英文版本可调成中文：左上角View—languages—中文</p>
+<p>📌2.配置地址和端口后启动</p>
+<p>📌注：这个程序个人感觉兼容性很差(当时的版本)，下载的时候找到热度高的版本和对应的位数系统,使用本程序前需要注意以下几点：==打开手机的开发者模式，勾选USB调试== ==手机USB模式不要设置为仅充电== ==通过终端adb devices能监测到设备，并且处于已授权状态== ==尽量不使用wifi模式连接，比较卡== ==部分手机可能需要开启【禁止权限监控】开发者选项–&gt;应用–&gt;禁止权限监控==</p>
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210723124135834.png" alt="ip和端口配置"></p>
+<h2 id="安装appium-doctor"><a href="#安装appium-doctor" class="headerlink" title="安装appium-doctor"></a>安装appium-doctor</h2><ul>
+<li>这个安装非必选项，主要用于检测哪些配置没有设置的</li>
+<li>安装命令：==sudo npm install -g appium-doctor==（Mac） 启动命令：==appium-doctor==</li>
+</ul>
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210723193925024.png" alt="appium-doctor"></p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p><span class="github-emoji"><span>▶</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/25b6.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>运行 Appium 点击上图的“启动服务器V1.15.1”进入下图后点击启动会话“③”</p>
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210723124302077.png" alt="启动会话"></p>
+<h3 id="参数配置"><a href="#参数配置" class="headerlink" title="参数配置"></a>参数配置</h3><p><span class="github-emoji"><span>1⃣</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/0031-20e3.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>deviceName**:**设备的名称   如果是WIF无线连接的设备名称输入设备ip:port形式  通过adb devices监会出现：2c0d4390   device,如果监测不到证明没有连上设备，确保驱动安装，调试模式都打开</p>
+<p><span class="github-emoji"><span>2⃣</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/0032-20e3.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>platformName<strong>：</strong>设备类型 Android / iOS</p>
+<p><span class="github-emoji"><span>3⃣</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/0033-20e3.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>appPackage<strong>：</strong>获取安装包名&amp;启动入口</p>
+<p><span class="github-emoji"><span>4⃣</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/0034-20e3.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>appActivity<strong>：</strong>启动路径（启动入口，每个APP只有一个入口）</p>
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210723124418361.png" alt="四大基础数据配置"></p>
+<h3 id="Error报错处理"><a href="#Error报错处理" class="headerlink" title="Error报错处理"></a>Error报错处理</h3><h4 id="Stderr-‘Security-exception-Permission-denial-writing-to-settings"><a href="#Stderr-‘Security-exception-Permission-denial-writing-to-settings" class="headerlink" title="Stderr: ‘Security exception: Permission denial: writing to settings"></a>Stderr: ‘Security exception: Permission denial: writing to settings</h4><ul>
+<li>由于未开启权限监控导致开启方法开发者选项–&gt;应用–&gt;<span class="github-emoji"><span>✅</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 禁止权限监控</li>
+</ul>
+<blockquote>
+<p>报错内容：</p>
+<p>An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: ‘Command ‘/usr/local/bin/adb -P 5037 -s f06d7a07 shell settings delete global hidden_api_policy_pre_p_apps’ exited with code 255’; Stderr: ‘Security exception: Permission denial: writing to settings requires:android.permission.WRITE_SECURE_SETTINGS java.lang.SecurityException: Permission denial: writing to settings requires:android.permission.WRITE_SECURE_SETTINGS at com.android.providers.settings.SettingsProvider.enforceWritePermission(SettingsProvider.java:2340) at com.android.providers.settings.SettingsProvider.mutateGlobalSetting(SettingsProvider.java:1405) at com.android.providers.settings.SettingsProvider.deleteGlobalSetting(SettingsProvider.java:1388) at com.android.providers.settings.SettingsProvider.call(SettingsProvider.java:603) at android.content.ContentProvider.call(ContentProvider.java:2162) at android.content.ContentProvider$Transport.call(ContentProvider.java:481) at com.android.providers.settings.SettingsService$MyShellCommand.deleteForUser(SettingsService.java:399) at com.android.providers.settings.SettingsService$MyShellCommand.onCommand(SettingsService.java:281) at android.os.ShellCommand.exec(ShellCommand.java:104) at com.android.providers.settings.SettingsService.onShellCommand(SettingsService.java:49) at android.os.Binder.shellCommand(Binder.java:881) at android.os.Binder.onTransact(Binder.java:765) at android.os.Binder.execTransactInternal(Binder.java:1021) at android.os.Binder.execTransact(Binder.java:994)’; Code: ‘255’</p>
+</blockquote>
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210723190856548.png" alt="开启禁止监控权限"></p>
+<h4 id="Could-not-find-a-connected-Android-device-in-20201ms"><a href="#Could-not-find-a-connected-Android-device-in-20201ms" class="headerlink" title="Could not find a connected Android device in 20201ms."></a>Could not find a connected Android device in 20201ms.</h4><ul>
+<li>An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20201ms. </li>
+</ul>
+<blockquote>
+<p>电脑在设定时间内找不到设备，一般这种情况下用 ==adb devices== 也找不到设备，这个时候去检查一下 ==开发者选项== ==usb调试== 如果都开启了，那再看下==usb连接后不能设置仅充电== ==电脑是否安装了手机的驱动== 如果没有的话需要安装手机的驱动（高通的cpu可以安装高通的通用版），最终要保证能通过 adb 命令检测到手机</p>
+</blockquote>
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210723192042261.png" alt="开启usb调试"></p>
+<h4 id="The-JAVA-HOME-environment-variable-must-be-set-for-Android-Tools-to-work-properly"><a href="#The-JAVA-HOME-environment-variable-must-be-set-for-Android-Tools-to-work-properly" class="headerlink" title="The JAVA_HOME environment variable must be set for Android Tools to work properly"></a>The JAVA_HOME environment variable must be set for Android Tools to work properly</h4><ul>
+<li>未设置java环境变量</li>
+</ul>
+<blockquote>
+<p>An unknown server-side error occurred while processing the command. Original error: Cannot verify the signature of ‘C:\Users\Administrator\AppData\Local\Programs\Appium\resources\app\node_modules\appium\node_modules\appium-uiautomator2-server\apks\appium-uiautomator2-server-v4.21.1.apk’. Original error: The JAVA_HOME environment variable must be set for Android Tools to work properly</p>
+</blockquote>
+<ul>
+<li>通过java javac java -version执行均正常</li>
+<li>通过appium-doctor执行也是正常</li>
+</ul>
+<p><img src="http://blog.adalucky.com/notes/ada/image-20210724021200458.png" alt="重新安装"></p>
+<h4 id="Injecting-to-another-application-requires-INJECT-EVENTS-permission"><a href="#Injecting-to-another-application-requires-INJECT-EVENTS-permission" class="headerlink" title="Injecting to another application requires INJECT_EVENTS permission"></a>Injecting to another application requires INJECT_EVENTS permission</h4><ul>
+<li>未开启USB模拟点击</li>
+</ul>
+<blockquote>
+<p>An unknown server-side error occurred while processing the command. Original error: java.lang.SecurityException: Injecting to another application requires INJECT_EVENTS permission</p>
+</blockquote>
+<p><img src="http://geojsonpublic.510link.com/notes/ada/image-20210724022950126.png" alt="开启USB模拟点击"></p>
+<iframe src="https://adalucky.com/simple/" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Ada</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.adaLucky.com/auto/app/">https://www.adaLucky.com/auto/app/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Ada</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/app/">
+                                    <span class="chip bg-color">app</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,twitter,facebook,google,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    .v[data-class="v"] .vwrap .vheader .vinput {
+      width: 32%;
+      border-bottom: 1px dashed #dedede;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+let metaPlaceholder = {"nick":"昵称","mail":"邮箱","link":"example.com"} ;
+//这里要换行
+new Valine({
+        el: '#vcomments',
+        appId: 'HvNn2fnND9DnBkt32cvR8g5x-gzGzoHsz',
+        appKey: '1FgE4n7EeWrdtvsJCcB20dfD',
+        notify: 'true' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-CN',
+        placeholder: '留下你的足迹..',
+        meta: ["nick", "mail", "link"],
+        recordIP: 'true' === 'true',
+        enableQQ: 'monsterid',
+        requiredFields: ["9f760f265b96a8d754fe66296f26d20e"],
+        master: ["9f760f265b96a8d754fe66296f26d20e"],
+        friends: ["cb3e577ff029d6073400d5557effd41f", ""],
+        tagMeta: ["博主", "小伙伴", "访客"],
+        metaPlaceholder: metaPlaceholder,
+
+    });
+
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            const nick = document.querySelector('input[name=nick]');
+            const reg = /^[A-Za-z0-9_-\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if (!email.value || !nick.value || !reg.test(email.value)) {
+                const str = `<div class="valert txt-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+                const vmark = document.querySelector('.vmark');
+                vmark.innerHTML = str;
+                vmark.style.display = 'block';
+
+                e.stopPropagation();
+
+                setTimeout(function() {
+                    vmark.style.display = 'none';
+                    vmark.innerHTML = '';
+                }, 2500);
+            }
+        }
+        }, true);
+</script>
+
+
+
+    
+
+    
+        <style>
+    .mvaline-card {
+        margin: 1.5rem auto;
+    }
+
+    .mvaline-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+</style>
+
+<div class="card mvaline-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="mvcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/minivaline/MiniValine.js"></script>
+<script>
+    new MiniValine({
+        el: '#mvcomments',
+        appId: 'HvNn2fnND9DnBkt32cvR8g5x-gzGzoHsz',
+        appKey: '1FgE4n7EeWrdtvsJCcB20dfD',
+        mode: 'DesertsP',
+        placeholder: '快来评论吧~',
+        pathname: window.location.pathname,
+        lang: 'zh-cn',
+        adminEmailMd5: '46606772953bed0812789d6dc955614e',
+        tagMeta: ["博主", "小伙伴", "访客"],
+        master: ["9f760f265b96a8d754fe66296f26d20e4"],
+        friends: ["cb3e577ff029d6073400d5557effd41f"],
+        math: true,
+        md: true,
+        enableQQ: true,
+        NoRecordIP: true,
+        visitor: true,
+        maxNest: 6,
+        pageSize: 6,
+        serverURLs: '',
+        emoticonUrl: ["https://cdn.jsdelivr.net/npm/alus@latest", "https://cdn.jsdelivr.net/gh/MiniValine/qq@latest", "https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@latest", "https://cdn.jsdelivr.net/gh/MiniValine/tieba@latest", "https://cdn.jsdelivr.net/gh/MiniValine/twemoji@latest", "https://cdn.jsdelivr.net/gh/MiniValine/weibo@latest"],
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/auto/webpack5/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/article/auto/webpack.jpg" class="responsive-img" alt="webpack5">
+                        
+                        <span class="card-title">webpack5</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            webpack 是代码编译工具，有入口、出口、loader 和插件。webpack 是一个用于现代JavaScript应用程序的静态模块打包工具。当 webpack 处理应用程序时，它会在内部构建一个依赖图(dependency graph
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Auto/" class="post-category">
+                                    Auto
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">前端基础</span>
+                    </a>
+                    
+                    <a href="/tags/webpack5/">
+                        <span class="chip bg-color">webpack5</span>
+                    </a>
+                    
+                    <a href="/tags/eslint/">
+                        <span class="chip bg-color">eslint</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/auto/jenkins/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/article/auto/jenkins.jpg" class="responsive-img" alt="jenkins">
+                        
+                        <span class="card-title">jenkins</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Jenkins是一个开源软件项目，是基于Java开发的一种持续集成工具，用于监控持续重复的工作，旨在提供一个开放易用的软件平台，使软件项目可以进行持续集成，本文将记录在 Linux环境下安装及配置 Jenkins
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Auto/" class="post-category">
+                                    Auto
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/jenkins/">
+                        <span class="chip bg-color">jenkins</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+
+    <!-- 仿明信片书信 -->
+    <style>
+        .ititle {
+            margin: 15px 0;
+            text-align:center;
+            font-family: 'Architects Daughter', cursive;
+        }
+        .ipage {
+            line-height: 30px;
+            margin: 0 auto;
+            padding: 15px 32px 29px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
+            -moz-border-radius-bottomleft: 20px 500px;
+            -moz-border-radius-bottomright: 500px 30px;
+            -moz-border-radius-topright: 5px 100px; 
+            -webkit-border-bottom-left-radius: 20px 500px;
+            -webkit-border-bottom-right-radius: 64px 10px;
+            -webkit-border-top-right-radius: 5px 100px;    
+            border-bottom-left-radius: 20px 500px;
+            border-bottom-right-radius: 64px 10px;
+            border-top-right-radius: 5px 100px;           
+            -webkit-background-size: 100% 30px;
+            -moz-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.2);
+            -webkit-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 1px 0 #F6EF97;
+            position: relative;
+        }
+        .izhengwen {
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            height: auto;
+            background: repeating-linear-gradient(to bottom, #f9f9f9, #f9f9f9 31px, #6BA2D8 1px, #f9f9f9);
+            background-size: 100% 32px;
+        }
+        #articleContent p {
+            margin: 0
+        }
+        .ititle {
+            font-family: 'Architects Daughter', cursive;
+            font-size: 1.45rem!important;
+            padding: 10px auto;
+        }
+        .izhengwen p {
+            position: relative;
+            line-height: 2.2rem!important;
+            text-indent: 2em;
+            font-family: 'Architects Daughter', cursive!important;
+            font-size: 1.45rem!important;
+        }
+        .ipage::before {
+            content: " ";
+            display: inline-block;
+            position: absolute;
+            top: 0px;
+            bottom: 0;
+            right: 52px;
+            z-index: 4;
+            width: 4px;
+            height: 100%;
+            border-left: 1px solid #fca1a1;
+        }
+        .izhengwen p:nth-child(odd):before {
+            content: " ";
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: -16px;
+            z-index: 3;
+            width: 24px;
+            height: 24px;
+            background-color: #fff;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
+        }
+        .ipage:after {
+            content: " ";
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 52px;
+            z-index: 3;
+            width: 4px;
+            height: 100%;
+            border-left: 4px double #fca1a1;
+        }
+        .ipage p {
+            padding: 0 2em;
+            color: #333!important;
+        }
+        body.dark .ipage {
+            opacity: 0.85;
+        }
+        /*小屏幕下(手机类)的样式*/
+        @media only screen and (max-width: 600px) {
+            .ipage {
+                padding: 15px 23px 29px;
+            }
+            .ipage:after {
+                left: 36px;
+            }
+            .ipage::before {
+                right: 36px;    
+            }
+            .ipage p {
+                padding: 0 0.9em;
+            }
+        }
+    </style>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Ada<br />'
+            + '文章作者: Ada<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2022</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">Ada</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">177.3k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "7";
+                    var startDate = "31";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.jpg" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2021020423号-1</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/adaLucky" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:958472019@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=958472019" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 958472019" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?547a0e4ab4c40fa915b034fbd877cb17";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+<!-- 深色模式按钮 -->
+    <script>
+        if (localStorage.getItem('dark') === '1') {
+        document.body.classList.add('dark');
+        }
+        else if (new Date().getHours() >= 22 || new Date().getHours() < 7) {
+        document.body.classList.add('dark');
+        } 
+        else if (matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+        }
+    </script>
+    <a onclick="switchNightMode()" id="sma">
+        <i class="fas fa-lightbulb" id="nightMode" aria-hidden="true"></i>
+    </a>
+
+    <!-- 天气接口控件   -->
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "841d15a0"
+        });
+        daovoice('update');
+    </script>
+    
+
+	
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+    
+    <!--知乎卡片链接-->
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+    <!--显示或隐藏内容-->
+<!--      这一行页面控制台有报错不引用-->
+<!--     <script type="text/javascript" src='http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js'></script> -->
+    <script type="text/javascript" src='/js/after_jquery.js'></script>
+    <link href='/css/fold.css' rel='stylesheet' type='text/css' />
+
+
+<script>(function (w, d, s, id) {
+            if (typeof (w.webpushr) !== 'undefined') return; w.webpushr = w.webpushr || function () { (w.webpushr.q = w.webpushr.q || []).push(arguments) }; var js, fjs = d.getElementsByTagName(s)[0]; js = d.createElement(s); js.id = id; js.async = 1; js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window, document, 'script', 'webpushr-jssdk'));webpushr('setup', { 'key': 'BLGpKf2yg8IV9PavVEP_cT5xr8fP_ePJ9ypV_28kYa9Nh5azvup1XTjW1ilsk7qD2eLPg22nGykpZnADaIwnmHo' });</script></body>
+
+</html>

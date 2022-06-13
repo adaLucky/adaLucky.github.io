@@ -1,0 +1,13 @@
+.hider_title{
+    font-family: "Monaco";
+    cursor: pointer;
+    font-size: 16px;
+    text-align: right;
+    font-weight: bold;
+}
+.close:after{
+    content: "▼";
+}
+.open:after{
+    content: "▲";
+}
